@@ -31,9 +31,13 @@ Route::post('produtos', 'ProdutosController@addproduto');
 Route::post('culturas', 'CulturasController@addcultura');
 Route::post('pragas', 'PragasController@addpraga');
 
-Route::put('produtos/{produtos}', 'ProdutosController@updateproduto');
-Route::put('culturas/{culturas}', 'CulturasController@updatecultura');
-Route::put('pragas/{pragas}', 'PragasController@updatepraga');
+Route::put('produtos/{id}', 'ProdutosController@updateproduto');
+Route::put('culturas/{id}', 'CulturasController@updatecultura');
+Route::put('pragas/{id}', 'PragasController@updatepraga');
+
+Route::delete('produtos/{id}', 'ProdutosController@deleteproduto');
+Route::delete('culturas/{id}', 'CulturasController@deletecultura');
+Route::delete('pragas/{id}', 'PragasController@deletepraga');
 
 
 
