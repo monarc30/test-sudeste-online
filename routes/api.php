@@ -18,27 +18,35 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+/*
+
+rotas criadas manualmente
+
 Route::get('produtos', 'ProdutosController@products');
-Route::get('culturas', 'CulturasController@culturas');
-Route::get('pragas', 'PragasController@pragas');
-
 Route::get('produtos/{id}', 'ProdutosController@productsbyid');
-Route::get('culturas/{id}', 'CulturasController@culturasbyid');
-Route::get('pragas/{id}', 'PragasController@pragasbyid');
-
-
 Route::post('produtos', 'ProdutosController@addproduto');
-Route::post('culturas', 'CulturasController@addcultura');
-Route::post('pragas', 'PragasController@addpraga');
-
 Route::put('produtos/{id}', 'ProdutosController@updateproduto');
-Route::put('culturas/{id}', 'CulturasController@updatecultura');
-Route::put('pragas/{id}', 'PragasController@updatepraga');
-
 Route::delete('produtos/{id}', 'ProdutosController@deleteproduto');
+
+
+Route::get('culturas/{id}', 'CulturasController@culturasbyid');
+Route::get('culturas', 'CulturasController@culturas');
+Route::post('culturas', 'CulturasController@addcultura');
+Route::put('culturas/{id}', 'CulturasController@updatecultura');
 Route::delete('culturas/{id}', 'CulturasController@deletecultura');
+
+Route::get('pragas', 'PragasController@pragas');
+Route::get('pragas/{id}', 'PragasController@pragasbyid');
+Route::post('pragas', 'PragasController@addpraga');
+Route::put('pragas/{id}', 'PragasController@updatepraga');
 Route::delete('pragas/{id}', 'PragasController@deletepraga');
 
+*/
+
+
+Route::apiResource('produtos', 'Produtos');
+Route::apiResource('culturas', 'Culturas');
+Route::apiResource('pragas', 'Pragas');
 
 
 //NAO ESQUECER DE VER O CADASTRO DAS DOSAGENS
