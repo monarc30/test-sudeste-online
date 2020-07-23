@@ -18,7 +18,7 @@ class AuthBasic
     {
 
         if (Auth::onceBasic()) {
-            return response()->json(['message' => 'App key not found'], 401);
+            return response()->json(['message' => 'Auth failed'], 401);
         }
         else{
             return $next($request);
