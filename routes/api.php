@@ -43,12 +43,25 @@ Route::delete('pragas/{id}', 'PragasController@deletepraga');
 
 */
 
+Route::group(['middleware' => ['guest:api']], function () {
+    Route::get('/guest', function(){
+        return 'Olá mundo API';
+    });
 
-Route::apiResource('produtos', 'Produtos');
-Route::apiResource('culturas', 'Culturas');
-Route::apiResource('pragas', 'Pragas');
+    Route::post('login', 'LoginController@login');
+});
+
+Route::group(['middleware' => 'auth:api'], function(){
+
+    Route::apiResource('produtos', 'Produtos');
+    Route::apiResource('culturas', 'Culturas');
+    Route::apiResource('pragas', 'Pragas');
+
+    //NAO ESQUECER DE VER O CADASTRO DAS DOSAGENS
+
+    Route::get('dosagensprodutos/{dosagensmodel}', 'DosagensController@show');
+
+});
 
 
-//NAO ESQUECER DE VER O CADASTRO DAS DOSAGENS
 
-Route::get('dosagensprodutos/{dosagensmodel}', 'DosagensController@show');
