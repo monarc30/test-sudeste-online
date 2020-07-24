@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PragasModel;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 
 class Pragas extends Controller
 {
@@ -37,7 +37,7 @@ class Pragas extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'name' => 'required|max:100',
+            'name' => 'required|min:4|max:100',
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {

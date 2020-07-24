@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\CulturasModel;
+use App\Models\DosagensModel;
 use Illuminate\Support\Facades\Validator;
 
-class Culturas extends Controller
+class Dosagens extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class Culturas extends Controller
      */
     public function index()
     {
-        return response()->json(CulturasModel::get(),200);
+        return response()->json(DosagensModel::get(),200);
     }
 
     /**
@@ -43,8 +43,8 @@ class Culturas extends Controller
         if ($validator->fails()) {
             return response()->json($validator->errors(), 400);
         }
-        $culturasModel = CulturasModel::create($request->all());
-        return response()->json($culturasModel, 201);
+        $dosagensModel = DosagensModel::create($request->all());
+        return response()->json($dosagensModel, 201);
     }
 
     /**
@@ -55,11 +55,11 @@ class Culturas extends Controller
      */
     public function show($id)
     {
-        $culturasModel = CulturasModel::find($id);
-        if (is_null($culturasModel)) {
+        $dosagensModel = DosagensModel::find($id);
+        if (is_null($dosagensModel)) {
             return MensagemController::not_found();
         }
-        return response()->json(CulturasModel::find($id),200);
+        return response()->json(DosagensModel::find($id),200);
     }
 
     /**
@@ -82,12 +82,12 @@ class Culturas extends Controller
      */
     public function update(Request $request, $id)
     {
-        $culturasModel = CulturasModel::find($id);
-        if (is_null($culturasModel)) {
+        $dosagensModel = DosagensModel::find($id);
+        if (is_null($dosagensModel)) {
             return MensagemController::not_found();
         }
-        $culturasModel->update($request->all());
-        return response()->json($culturasModel, 200);
+        $dosagensModel->update($request->all());
+        return response()->json($dosagensModel, 200);
     }
 
     /**
@@ -98,11 +98,11 @@ class Culturas extends Controller
      */
     public function destroy($id)
     {
-        $culturasModel = CulturasModel::find($id);
-        if (is_null($culturasModel)) {
+        $dosagensModel = DosagensModel::find($id);
+        if (is_null($dosagensModel)) {
             return MensagemController::not_found();
         }
-        $culturasModel->delete();
+        $dosagensModel->delete();
         return response()->json(null, 204);
     }
 }

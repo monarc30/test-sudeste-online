@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ProdutosModel;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 
 class Produtos extends Controller
 {
@@ -37,7 +37,7 @@ class Produtos extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'name' => 'required|max:100',
+            'name' => 'required|min:4|max:100',
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
