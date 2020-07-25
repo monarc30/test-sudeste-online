@@ -59,7 +59,7 @@ class Pragas extends Controller
         if (is_null($PragasModel)) {
             return MensagemController::not_found();
         }
-        return response()->json(PragasModel::find($id),200);
+        return response()->json($PragasModel,200);
     }
 
     /**

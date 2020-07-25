@@ -15,7 +15,9 @@ class Dosagens extends Controller
      */
     public function index()
     {
-        return response()->json(DosagensModel::get(),200);
+        return response()->json(DosagensModel::
+            with('produtos','culturas','pragas')
+            ->get(),200);
     }
 
     /**
@@ -56,10 +58,16 @@ class Dosagens extends Controller
     public function show($id)
     {
         $dosagensModel = DosagensModel::find($id);
+
+        $dosagensModel->produtos->attributes;
+        $dosagensModel->culturas->attributes;
+        $dosagensModel->pragas->attributes;
+
         if (is_null($dosagensModel)) {
             return MensagemController::not_found();
         }
-        return response()->json(DosagensModel::find($id),200);
+
+        return response()->json($dosagensModel,200);
     }
 
     /**

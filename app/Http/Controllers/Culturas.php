@@ -59,7 +59,7 @@ class Culturas extends Controller
         if (is_null($culturasModel)) {
             return MensagemController::not_found();
         }
-        return response()->json(CulturasModel::find($id),200);
+        return response()->json($culturasModel,200);
     }
 
     /**
