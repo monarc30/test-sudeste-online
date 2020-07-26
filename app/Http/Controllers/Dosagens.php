@@ -39,8 +39,9 @@ class Dosagens extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'name' => 'required|min:4|max:100',
+            'dosagem' => 'required|min:4|max:100',
         ];
+
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return response()->json($validator->errors(), 400);
@@ -90,6 +91,13 @@ class Dosagens extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'name' => 'required|min:4|max:100',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
         $dosagensModel = DosagensModel::find($id);
         if (is_null($dosagensModel)) {
             return MensagemController::not_found();

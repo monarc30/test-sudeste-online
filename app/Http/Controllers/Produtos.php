@@ -82,6 +82,13 @@ class Produtos extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'name' => 'required|min:4|max:100',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
         $produtosModel = ProdutosModel::find($id);
         if (is_null($produtosModel)) {
             return MensagemController::not_found();

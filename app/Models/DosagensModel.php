@@ -11,6 +11,7 @@ class DosagensModel extends Model
         'idproduto',
         'idcultura',
         'idpraga',
+        'dosagem',
         'created_at',
         'update_at,'
     ];

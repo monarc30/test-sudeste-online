@@ -82,6 +82,14 @@ class Pragas extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $rules = [
+            'name' => 'required|min:4|max:100',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
         $pragasModel = PragasModel::find($id);
         if (is_null($pragasModel)) {
             return MensagemController::not_found();

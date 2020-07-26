@@ -25,14 +25,14 @@ Route::group(['middleware' => ['guest:api']], function () {
 });
 
 
-//Route::group(['middleware' => 'auth:api'], function(){
+Route::group(['middleware' => 'auth:api'], function(){
 
     Route::apiResource('produtos', 'Produtos');
     Route::apiResource('culturas', 'Culturas');
     Route::apiResource('pragas', 'Pragas');
     Route::apiResource('dosagens', 'Dosagens');
-
     Route::get('/DosagemPDF', 'PDFDosagensController@GeraPDFDosagem');
 
-//});
+});
+
 
