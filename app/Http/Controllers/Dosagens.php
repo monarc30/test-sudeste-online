@@ -6,10 +6,45 @@ use Illuminate\Http\Request;
 use App\Models\DosagensModel;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * @group Gerencia Dosagens
+ *
+ * APIs para gerenciamento de dosagens
+ */
+
 class Dosagens extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Exibe a lista de dosagens.
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "id": 12,
+     *    "idcultura": 1,
+     *    "idpraga": 3,
+     *    "dosagem": "dosagem4",
+     *    "created_at": "2020-07-26T22:49:45.000000Z",
+     *    "updated_at": "2020-07-26T22:49:45.000000Z",
+     *    "produtos": {
+     *        "id": 2,
+     *        "name": "produto9",
+     *        "created_at": "2020-07-26T22:29:44.000000Z",
+     *        "updated_at": "2020-07-26T22:29:44.000000Z"
+     *    },
+     *    "culturas": {
+     *        "id": 1,
+     *        "name": "cultura6",
+     *        "created_at": "2020-07-25T21:15:36.000000Z",
+     *        "updated_at": "2020-07-26T01:58:57.000000Z"
+     *    },
+     *    "pragas": {
+     *        "id": 3,
+     *        "name": "praga3",
+     *        "created_at": "2020-07-26T22:44:18.000000Z",
+     *        "updated_at": "2020-07-26T22:44:18.000000Z"
+     *    }
+     *}
      *
      * @return \Illuminate\Http\Response
      */
@@ -21,7 +56,7 @@ class Dosagens extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new dosagens.
      *
      * @return \Illuminate\Http\Response
      */
@@ -31,7 +66,21 @@ class Dosagens extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Armazena novas dosagens.
+     *
+     * @bodyParam dosagem string com mínimo 4 e maximo 100 caracteres
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "idproduto": 2,
+     *  "idcultura": 1,
+     *  "idpraga": 3,
+     *  "dosagem": "dosagem4",
+     *  "updated_at": "2020-07-26T22:49:45.000000Z",
+     *  "created_at": "2020-07-26T22:49:45.000000Z",
+     *  "id": 12
+     * }
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -51,28 +100,51 @@ class Dosagens extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Exibe uma dosagem específica
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "id": 12,
+     *    "idcultura": 1,
+     *    "idpraga": 3,
+     *    "dosagem": "dosagem4",
+     *    "created_at": "2020-07-26T22:49:45.000000Z",
+     *    "updated_at": "2020-07-26T22:49:45.000000Z",
+     *    "produtos": {
+     *        "id": 2,
+     *        "name": "produto9",
+     *        "created_at": "2020-07-26T22:29:44.000000Z",
+     *        "updated_at": "2020-07-26T22:29:44.000000Z"
+     *    },
+     *    "culturas": {
+     *        "id": 1,
+     *        "name": "cultura6",
+     *        "created_at": "2020-07-25T21:15:36.000000Z",
+     *        "updated_at": "2020-07-26T01:58:57.000000Z"
+     *    },
+     *    "pragas": {
+     *        "id": 3,
+     *        "name": "praga3",
+     *        "created_at": "2020-07-26T22:44:18.000000Z",
+     *        "updated_at": "2020-07-26T22:44:18.000000Z"
+     *    }
+     *}
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $dosagensModel = DosagensModel::find($id);
-
-        $dosagensModel->produtos->attributes;
-        $dosagensModel->culturas->attributes;
-        $dosagensModel->pragas->attributes;
-
-        if (is_null($dosagensModel)) {
-            return MensagemController::not_found();
-        }
-
-        return response()->json($dosagensModel,200);
+        return response()->json(DosagensModel::
+            with('produtos','culturas','pragas')
+            ->find($id),200);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified dosagens.
+     *
+     * @authenticated
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -83,7 +155,37 @@ class Dosagens extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Altera uma dosagem específica.
+     * @bodyParam name string com mínimo 4 e maximo 100 caracteres
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "id": 12,
+     *    "idcultura": 1,
+     *    "idpraga": 3,
+     *    "dosagem": "dosagem4",
+     *    "created_at": "2020-07-26T22:49:45.000000Z",
+     *    "updated_at": "2020-07-26T22:49:45.000000Z",
+     *    "produtos": {
+     *        "id": 2,
+     *        "name": "produto9",
+     *        "created_at": "2020-07-26T22:29:44.000000Z",
+     *        "updated_at": "2020-07-26T22:29:44.000000Z"
+     *    },
+     *    "culturas": {
+     *        "id": 1,
+     *        "name": "cultura6",
+     *        "created_at": "2020-07-25T21:15:36.000000Z",
+     *        "updated_at": "2020-07-26T01:58:57.000000Z"
+     *    },
+     *    "pragas": {
+     *        "id": 3,
+     *        "name": "praga3",
+     *        "created_at": "2020-07-26T22:44:18.000000Z",
+     *        "updated_at": "2020-07-26T22:44:18.000000Z"
+     *    }
+     *}
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -107,7 +209,13 @@ class Dosagens extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove uma dosagem específico.
+     *
+     * @authenticated
+     *
+     * @response {
+     *  1,
+     * }
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

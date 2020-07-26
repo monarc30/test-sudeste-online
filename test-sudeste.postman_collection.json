@@ -1,0 +1,641 @@
+{
+	"info": {
+		"_postman_id": "206559a3-cf2a-4f69-ba6a-580d9b2544eb",
+		"name": "test-sudeste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_all_produtos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiNTZiNmYzZDVmMjJlYTA0ZWEyOGNjNjQzOTgyMjkxMTRjNDM2ODI5YTc1YjcwNWI5YzZjNjZjZmM2ZmE1MWMzYmExNWNmN2FmOGQxMGU0NmMiLCJpYXQiOjE1OTU2Mjc2OTcsIm5iZiI6MTU5NTYyNzY5NywiZXhwIjoxNjI3MTYzNjk3LCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.mI8g9229pA8GRggFpoRhxYU-QFIs5Hom_YM5XxaHEMSkevy_62uLfe3GudAXS3kEkz3sIEDZVqqQRNdHlMslud8u3u--DbWXpUISECoFC_uKlPf0PLlRck5BPnt2wRNywaXUTZ-r2VteYqe9JH_hPpcnrhNOqScT-e1xr84Di58s8BUN0nIXmmRiOMVkxLpVEWJm7FEpbavmgN60IHdRLhO_Czm3xcAZFtDJLv3GuePmRl6lXYliVAypKm0Rf34kRnvQjB6JiPrbnj1DuOW6fEiIffHfG6jtz92w572U-ekEPrzXmcbRTgm9Et1ANOSWnOTEU4sm2p7qRznabEwiBBm7pKbs_1Jo88RoxGWJyw1N3kp3SsqPqlk8SSU4M-6gT5PUhLArY3IFzI_hrhkennELpjbBHCugT1Kq9OcTn4sWNXYsf-NCrjo83FbMKKqF4SV9SzKH1HxAyZi9JEomFpMJyRwgQwazf1WCM858ktI2xUlUUNKSgoYp-RZFzaJCF0BPkL_S3L3azvHf8dFKq7rfb6nFbFFlUpjOCy98NPjsh0pTu918SrX9R--9_ivErYrLr3V0iXqPUer2RXhhv0c8xKLsYjaODEUtLLCoCeWb7AFUqgAX4-V2PUDmalPjvmKDIK3Y5lTafjx7tV1KIbVfOqe3bwkJ2v93uVHvkfg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "APP_KEY",
+						"value": "FERNANDODOSSANTOSMONARCA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/produtos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_dosagens_PDF",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/seu_host_aqui/public/api/DosagemPDF",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"seu_host_aqui",
+						"public",
+						"api",
+						"DosagemPDF"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save_produto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"defensivo3\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/produtos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"defensivo3\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/produtos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"fernando.monarca@hotmail.com\",\r\n    \"password\": 12345678\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save_cultura",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"soja\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/culturas",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"culturas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save_praga",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"gafanhoto\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/pragas",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"pragas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save_dosagem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"gafanhoto\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/dosagens",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"dosagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_produto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "defensivos3",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/produtos/5?name=aaaaaaaaaa",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos",
+						"5"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "aaaaaaaaaa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_cultura",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "defensivos3",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/produtos/5?name=aaaaaaaaaa",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos",
+						"5"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "aaaaaaaaaa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_praga",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "defensivos3",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/pragas/2?name=aaaaaaaaaa",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"pragas",
+						"2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "aaaaaaaaaa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_dosagem",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "defensivos3",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/pragas/2?name=aaaaaaaaaa",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"pragas",
+						"2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "aaaaaaaaaa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_produto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "keyboard",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "80",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/test-hostgator/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"test-hostgator",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_cultura",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "keyboard",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "80",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/test-hostgator/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"test-hostgator",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_praga",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "keyboard",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "80",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/pragas/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"pragas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_dosagem",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "keyboard",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "80",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/dosagens/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"dosagens",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_pragas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_dosagens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/dosagens",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"dosagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_culturas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_dosagens_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/dosagens/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"dosagens",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_produto_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/produtos/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_culturas_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/produtos/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_pragas_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/produtos/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

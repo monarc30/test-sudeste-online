@@ -6,10 +6,22 @@ use Illuminate\Http\Request;
 use App\Models\CulturasModel;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * @group Gerencia Culturas
+ *
+ * APIs para gerenciamento de Culturas
+ */
+
 class Culturas extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Exibe a lista de culturas.
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "name": "cultura1"
+     * }
      *
      * @return \Illuminate\Http\Response
      */
@@ -19,7 +31,7 @@ class Culturas extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new culturas.
      *
      * @return \Illuminate\Http\Response
      */
@@ -29,7 +41,17 @@ class Culturas extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Armazena novas Culturas.
+     * @bodyParam name string com mínimo 4 e maximo 100 caracteres
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "id": 1,
+     *  "name": "cultura1",
+     *  "created_at": "2020-07-25T21:15:09.000000Z",
+     *  "updated_at": "2020-07-26T01:58:47.000000Z"
+     * }
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -48,7 +70,16 @@ class Culturas extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Exibe uma Cultura específico
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "id": 1,
+     *  "name": "cultura6",
+     *  "created_at": "2020-07-25T21:15:09.000000Z",
+     *  "updated_at": "2020-07-26T01:58:47.000000Z"
+     * }
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -63,7 +94,7 @@ class Culturas extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified culturas.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -74,7 +105,17 @@ class Culturas extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Altera uma cultura específica.
+     * @bodyParam name string com mínimo 4 e maximo 100 caracteres
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "id": 1,
+     *  "name": "cultura6",
+     *  "created_at": "2020-07-25T21:15:09.000000Z",
+     *  "updated_at": "2020-07-26T01:58:47.000000Z"
+     * }
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -98,7 +139,13 @@ class Culturas extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove uma cultura específico.
+     *
+     * @authenticated
+     *
+     * @response {
+     *  1,
+     * }
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

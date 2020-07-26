@@ -6,10 +6,22 @@ use Illuminate\Http\Request;
 use App\Models\ProdutosModel;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * @group Gerencia Produtos
+ *
+ * APIs para gerenciamento de produtos
+ */
+
 class Produtos extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Exibe a lista de produtos.
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "name": "exemplo produto"
+     * }
      *
      * @return \Illuminate\Http\Response
      */
@@ -19,7 +31,7 @@ class Produtos extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new produtos.
      *
      * @return \Illuminate\Http\Response
      */
@@ -29,7 +41,17 @@ class Produtos extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Armazena novos produtos.
+     * @bodyParam name string com mínimo 4 e maximo 100 caracteres
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "id": 1,
+     *  "name": "produto6",
+     *  "created_at": "2020-07-25T21:15:09.000000Z",
+     *  "updated_at": "2020-07-26T01:58:47.000000Z"
+     * }
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -48,7 +70,16 @@ class Produtos extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Exibe um produto específico
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "id": 1,
+     *  "name": "produto6",
+     *  "created_at": "2020-07-25T21:15:09.000000Z",
+     *  "updated_at": "2020-07-26T01:58:47.000000Z"
+     * }
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -63,7 +94,7 @@ class Produtos extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified produtos.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -74,7 +105,17 @@ class Produtos extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Altera um produto específico.
+     * @bodyParam name string com mínimo 4 e maximo 100 caracteres
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "id": 1,
+     *  "name": "produto6",
+     *  "created_at": "2020-07-25T21:15:09.000000Z",
+     *  "updated_at": "2020-07-26T01:58:47.000000Z"
+     * }
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -98,7 +139,13 @@ class Produtos extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove um produto específico.
+     *
+     * @authenticated
+     *
+     * @response {
+     *  1,
+     * }
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

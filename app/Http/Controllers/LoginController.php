@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 
+/**
+ * @group Pragas management
+ *
+ * APIs for managing pragas
+ */
+
 class LoginController extends Controller
 {
     public function login(Request $request)
