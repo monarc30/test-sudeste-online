@@ -1,0 +1,14 @@
+Algumas instruções:
+
+A documentação do projeto foi gerada utilizando o link laravel-apidoc-generator que respeita as regras do Swagger, o arquivo
+JSON se encontra dentro da pasta public/docs/collection.json
+
+Para acessar via browser por exemplo é:
+http://localhost/seu-host/public/docs/#apidosagempdf
+
+O PDF das dosagens é por exemplo assim:
+
+http://localhost/api/DosagemPDF
+
+
+
