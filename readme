@@ -11,3 +11,5 @@ O PDF das dosagens é por exemplo assim:
 http://localhost/api/DosagemPDF
 
 A autenticação foi feita utilizando-se o OAUTH2 para gerar o Token Bearer.
+
+Lembrando que utilizei o passport para gerar a chave no servidor.
